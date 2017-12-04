@@ -2,17 +2,16 @@
 using System.IO;
 using System.Linq;
 
-namespace _02._01
+namespace _04._01
 {
 	class Program
 	{
 		static void Main()
 		{
-			var result = 
+			var result =
 				File.ReadAllLines("input.txt")
-				.Select(row => row.Split('\t', StringSplitOptions.RemoveEmptyEntries)
-				.Select(int.Parse).ToArray())
-				.Sum(n => n.Max() - n.Min());
+				.Select(n => n.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+				.Count(n => n.Distinct().Count() == n.Length);
 
 			Console.WriteLine(result);
 			Console.ReadKey();
