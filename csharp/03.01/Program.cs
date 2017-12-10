@@ -8,43 +8,29 @@ namespace _03._01
 	{
 		static void Main()
 		{
-			int input = 49;
+			var input = 48;
+			var sqrt = Math.Sqrt(input);
+			var roundedUp = (int)Math.Round(sqrt, MidpointRounding.AwayFromZero);
 
-			int dimensionSize = (int)Math.Sqrt(input);
 
-			int center = (dimensionSize - 1) / 2;
+			var squared = Math.Pow(roundedUp, 2);
 
-			int[,] grid = new int[dimensionSize, dimensionSize];
 
-			grid[center, center] = 1;
+			var tmp = (roundedUp - 1) / 2;
 
-			int x, y;
-			x = y = center;
-			int offset = 1;
+			var tmp2 = tmp + (squared - tmp);
+ 
+			
+			 
 
-			for (int i = 1; i < input; i++)
-			{
-				
-			}
-
-			void RenderGrid()
-			{
-				for (int i = 0; i < dimensionSize; i++)
-				{
-					for (int j = 0; j < dimensionSize; j++)
-						Console.Write(grid[i,j] + "\t", i == center && j == center ? Color.Red : Color.White);
-
-					Console.WriteLine();
-					Console.WriteLine();
-					Console.WriteLine();
-					Console.WriteLine();
-				}
-
-			}
-
-			var result = 0;
-
-			RenderGrid();
+			/*		37	36	35	34	33	32	31
+			 *		38  17  16  15  14  13	30
+			 *		39	18   5   4   3  12	29
+			 *		40	19   6   1   2  11	28
+			 *		41	20   7   8   9  10	27
+			 *		42	21  22  23	24	25	26
+			 *		43	44	45	46	47	48	49 
+			 */            //4 //3 //4 //5 //6
 
 			Console.ReadKey();
 		}
